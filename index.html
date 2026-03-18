@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zariyaa – Handcrafted Hair Accessories</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* ── Reset & Variables ── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --rose: #f4a7b9;
+      --rose-dark: #e07a96;
+      --blush: #fde8ef;
+      --cream: #fff8f4;
+      --mauve: #c9829a;
+      --text: #3b2a33;
+      --muted: #8a6878;
+      --white: #ffffff;
+      --card-bg: #fffafc;
+      --shadow: 0 4px 24px rgba(200, 110, 145, .13);
+      --shadow-lg: 0 12px 40px rgba(200, 110, 145, .22);
+      --radius: 18px;
+      --transition: .35s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--blush);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--rose);
+      border-radius: 99px;
+    }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 252, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(244, 167, 185, .25);
+      padding: 0 clamp(1rem, 5vw, 3rem);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 1rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--rose), var(--mauve));
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(200, 110, 145, .35);
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--mauve), var(--rose-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: .5px;
+    }
+
+    .tagline {
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .5rem .9rem;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: var(--blush);
+      color: var(--rose-dark);
+    }
+
+    .nav-link.insta:hover {
+      color: #c13584;
+      background: #fce4f3;
+    }
+
+    .nav-link.fb:hover {
+      color: #1877f2;
+      background: #e8f0fe;
+    }
+
+    .nav-icon {
+      font-size: 1.05rem;
+    }
+
+    /* ══════════════════════════════════════
+       HERO BANNER
+    ══════════════════════════════════════ */
+    .hero {
+      background: linear-gradient(135deg, #fde8ef 0%, #fff0f6 50%, #fdf0ff 100%);
+      padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      opacity: .25;
+    }
+
+    .hero::before {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, var(--rose), transparent 70%);
+      top: -160px;
+      right: -120px;
+    }
+
+    .hero::after {
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, #d4a0f7, transparent 70%);
+      bottom: -120px;
+      left: -80px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(244, 167, 185, .25);
+      color: var(--rose-dark);
+      border: 1px solid rgba(224, 122, 150, .3);
+      border-radius: 99px;
+      padding: .35rem 1.1rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--rose-dark), var(--mauve));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(.95rem, 2vw, 1.1rem);
+      max-width: 480px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: linear-gradient(135deg, var(--rose-dark), var(--mauve));
+      color: #fff;
+      padding: .85rem 2rem;
+      border-radius: 99px;
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(200, 110, 145, .35);
+      transition: var(--transition);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(200, 110, 145, .45);
+    }
+
+    /* ══════════════════════════════════════
+       SEARCH & FILTER BAR
+    ══════════════════════════════════════ */
+    .controls-wrap {
+      background: var(--white);
+      border-bottom: 1px solid rgba(244, 167, 185, .2);
+      padding: 1.2rem clamp(1rem, 5vw, 3rem);
+      position: sticky;
+      top: 70px;
+      z-index: 90;
+    }
+
+    .controls-inner {
+      max-width: 1280px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .85rem;
+    }
+
+    .search-wrap {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+
+    .search-wrap i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: .95rem;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: .75rem 1rem .75rem 2.8rem;
+      border: 1.5px solid rgba(244, 167, 185, .4);
+      border-radius: 99px;
+      background: var(--blush);
+      font-family: inherit;
+      font-size: .9rem;
+      color: var(--text);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    #searchInput::placeholder {
+      color: var(--muted);
+    }
+
+    #searchInput:focus {
+      border-color: var(--rose);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(244, 167, 185, .2);
+    }
+
+    .filter-select-wrap {
+      position: relative;
+    }
+
+    .filter-select-wrap i {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    #categoryFilter {
+      appearance: none;
+      padding: .75rem 2.8rem .75rem 1.2rem;
+      border: 1.5px solid rgba(244, 167, 185, .4);
+      border-radius: 99px;
+      background: var(--blush);
+      font-family: inherit;
+      font-size: .9rem;
+      color: var(--text);
+      outline: none;
+      cursor: pointer;
+      transition: var(--transition);
+      min-width: 165px;
+    }
+
+    #categoryFilter:focus {
+      border-color: var(--rose);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(244, 167, 185, .2);
+    }
+
+    .result-count {
+      font-size: .83rem;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    .result-count span {
+      font-weight: 600;
+      color: var(--rose-dark);
+    }
+
+    /* ══════════════════════════════════════
+       PRODUCT GRID
+    ══════════════════════════════════════ */
+    .grid-section {
+      max-width: 1280px;
+      margin: auto;
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 5vw, 3rem);
+    }
+
+    #productGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+      gap: clamp(1rem, 3vw, 1.6rem);
+    }
+
+    /* ── Product Card ── */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(244, 167, 185, .15);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      animation: fadeUp .45s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(244, 167, 185, .4);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--blush);
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .card:hover .card-img-wrap img {
+      transform: scale(1.1);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: .75rem;
+      left: .75rem;
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(8px);
+      border-radius: 99px;
+      padding: .25rem .75rem;
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--mauve);
+      text-transform: capitalize;
+      letter-spacing: .8px;
+      border: 1px solid rgba(244, 167, 185, .3);
+    }
+
+    .card-wish {
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .85rem;
+      color: #ccc;
+      cursor: pointer;
+      border: 1px solid rgba(244, 167, 185, .3);
+      transition: var(--transition);
+    }
+
+    .card-wish:hover,
+    .card-wish.active {
+      color: var(--rose-dark);
+    }
+
+    .card-wish.active i {
+      font-weight: 900;
+    }
+
+    .card-body {
+      padding: 1.1rem 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      flex: 1;
+    }
+
+    .card-category {
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+    }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .card-price {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--rose-dark);
+      margin-top: .1rem;
+    }
+
+    .card-price small {
+      font-size: .78rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-left: .35rem;
+    }
+
+    .card-footer {
+      padding: 0 1.2rem 1.2rem;
+    }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      width: 100%;
+      padding: .72rem 1rem;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      border-radius: 99px;
+      font-family: inherit;
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, .25);
+      transition: var(--transition);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(37, 211, 102, .38);
+      background: linear-gradient(135deg, #20be5b, #0e7a6e);
+    }
+
+    .btn-whatsapp i {
+      font-size: 1rem;
+    }
+
+    /* ── Empty State ── */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .empty-state .emoji {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .empty-state h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+
+    .empty-state p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: linear-gradient(135deg, #3b2a33, #4e3240);
+      color: rgba(255, 255, 255, .85);
+      padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 5vw, 3rem) 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .brand-name {
+      font-size: 1.6rem;
+      margin-bottom: .5rem;
+      display: block;
+    }
+
+    .footer-brand .tagline {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: .88rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, .6);
+      max-width: 300px;
+    }
+
+    .footer-socials h4 {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1rem;
+    }
+
+    .social-btns {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .6rem 1.1rem;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: .84rem;
+      font-weight: 500;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .social-btn.insta {
+      background: rgba(193, 53, 132, .2);
+      color: #f38ab5;
+      border: 1px solid rgba(193, 53, 132, .3);
+    }
+
+    .social-btn.insta:hover {
+      background: rgba(193, 53, 132, .35);
+      transform: translateY(-2px);
+    }
+
+    .social-btn.fb {
+      background: rgba(24, 119, 242, .2);
+      color: #7eb4ff;
+      border: 1px solid rgba(24, 119, 242, .3);
+    }
+
+    .social-btn.fb:hover {
+      background: rgba(24, 119, 242, .35);
+      transform: translateY(-2px);
+    }
+
+    .social-btn.wa {
+      background: rgba(37, 211, 102, .2);
+      color: #6de09d;
+      border: 1px solid rgba(37, 211, 102, .3);
+    }
+
+    .social-btn.wa:hover {
+      background: rgba(37, 211, 102, .35);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: auto;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--rose);
+    }
+
+    /* ══════════════════════════════════════
+       TOAST
+    ══════════════════════════════════════ */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 9999;
+      background: #3b2a33;
+      color: #fff;
+      padding: .85rem 1.4rem;
+      border-radius: 12px;
+      font-size: .88rem;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: .3s ease;
+      pointer-events: none;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #toast i {
+      color: var(--rose);
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE TWEAKS
+    ══════════════════════════════════════ */
+    @media (max-width: 600px) {
+      .tagline {
+        display: none;
+      }
+
+      .nav-link span {
+        display: none;
+      }
+
+      .nav-link {
+        padding: .5rem .7rem;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #productGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .75rem;
+      }
+
+      .card-body {
+        padding: .8rem .9rem 1rem;
+      }
+
+      .card-footer {
+        padding: 0 .9rem .9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════ HEADER ════════ -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo-wrap">
+        <div class="logo-icon">🎀</div>
+        <div>
+          <span class="brand-name">Zariyaa</span>
+          <span class="tagline">Handcrafted with love</span>
+        </div>
+      </a>
+      <nav>
+        <a href="https://www.instagram.com/zariyaa__official/" target="_blank" class="nav-link insta">
+          <i class="fab fa-instagram nav-icon"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" class="nav-link fb">
+          <i class="fab fa-facebook-f nav-icon"></i>
+          <span>Facebook</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✨ New Arrivals Every Week</div>
+      <h1>Adorn Yourself with <span>Handcrafted</span> Hair Magic</h1>
+      <p>Discover our dreamy collection of scrunchies, bows, clips, and more — each piece made with love.</p>
+      <a href="#products" class="hero-cta">
+        <i class="fas fa-sparkles"></i> Shop the Collection
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════ SEARCH & FILTER ════════ -->
+  <div class="controls-wrap">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off" />
+      </div>
+      <div class="filter-select-wrap">
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+        </select>
+        <i class="fas fa-chevron-down" style="font-size:.75rem;"></i>
+      </div>
+      <div class="result-count"><span id="countNum">0</span> products</div>
+    </div>
+  </div>
+
+  <!-- ════════ PRODUCT GRID ════════ -->
+  <section class="grid-section" id="products">
+    <div id="productGrid"></div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name"
+          style="font-family:'Playfair Display',serif;background:linear-gradient(135deg,#f4a7b9,#e07a96);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Zariyaa</span>
+        <span class="tagline"
+          style="color:rgba(255,255,255,.45);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;">Handcrafted
+          with love</span>
+        <p>Premium handcrafted hair accessories made from carefully selected materials. Each piece is a small work of
+          art for your everyday look.</p>
+      </div>
+      <div class="footer-socials">
+        <h4>Find Us On</h4>
+        <div class="social-btns">
+          <a href="https://www.instagram.com/zariyaa__official/" target="_blank" class="social-btn insta">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" class="social-btn fb">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="https://wa.me/1234567890" target="_blank" class="social-btn wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 <strong>Zariyaa</strong>. All rights reserved.</span>
+      <span>Made with <span style="color:var(--rose);">♥</span> for hair lovers</span>
+    </div>
+  </footer>
+
+  <!-- ════════ TOAST ════════ -->
+  <div id="toast"><i class="fas fa-heart"></i> <span id="toastMsg"></span></div>
+
+  <script>
+    /* ══════════════════════════════════════
+       PRODUCT DATA
+       Add or remove products here easily!
+    ══════════════════════════════════════ */
+    let products = [
+      {
+        id: 1,
+        name: "Pink Satin Scrunchie",
+        category: "scrunchies",
+        price: "PKR 250",
+        originalPrice: "PKR 350",
+        emoji: "🌸",
+        image: "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Pink%20Satin%20Scrunchie"
+      },
+      {
+        id: 2,
+        name: "Blue Ribbon Bow",
+        category: "bows",
+        price: "PKR 300",
+        originalPrice: null,
+        emoji: "🎀",
+        image: "https://images.unsplash.com/photo-1625591341337-13f71b36ab55?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Blue%20Ribbon%20Bow"
+      },
+      {
+        id: 3,
+        name: "Velvet Scrunchie Set",
+        category: "scrunchies",
+        price: "PKR 450",
+        originalPrice: "PKR 600",
+        emoji: "🍇",
+        image: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Velvet%20Scrunchie%20Set"
+      },
+      {
+        id: 4,
+        name: "Pearl Hair Clip",
+        category: "clips",
+        price: "PKR 200",
+        originalPrice: null,
+        emoji: "🤍",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Pearl%20Hair%20Clip"
+      },
+      {
+        id: 5,
+        name: "Floral Claw Clip",
+        category: "clips",
+        price: "PKR 280",
+        originalPrice: "PKR 380",
+        emoji: "🌺",
+        image: "https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Floral%20Claw%20Clip"
+      },
+      {
+        id: 6,
+        name: "Butterfly Bow",
+        category: "bows",
+        price: "PKR 320",
+        originalPrice: null,
+        emoji: "🦋",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Butterfly%20Bow"
+      },
+      {
+        id: 7,
+        name: "Silk Scrunchie Duo",
+        category: "scrunchies",
+        price: "PKR 380",
+        originalPrice: "PKR 500",
+        emoji: "🌿",
+        image: "https://images.unsplash.com/photo-1526758097130-bab247274f58?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Silk%20Scrunchie%20Duo"
+      },
+      {
+        id: 8,
+        name: "Mini Bow Headband",
+        category: "headbands",
+        price: "PKR 350",
+        originalPrice: null,
+        emoji: "🎗️",
+        image: "https://images.unsplash.com/photo-1610631066894-62452ccb927c?w=400&h=400&fit=crop&crop=center",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Mini%20Bow%20Headband"
+      },
+      {
+        id: 9,
+        name: "Hair Clips",
+        category: "clips",
+        price: "PKR 750",
+        originalPrice: null,
+        emoji: "🎗️",
+        image: "img1.png",
+        whatsapp: "https://wa.me/1234567890?text=Hi!%20I%20want%20to%20buy%20Hair%20Clips"
+      }
+
+    ];
+
+    /* ══════════════════════════════════════
+       WISHLIST
+    ══════════════════════════════════════ */
+    let wishlist = new Set();
+
+    /* ══════════════════════════════════════
+       INIT CATEGORIES
+    ══════════════════════════════════════ */
+    function buildCategoryFilter() {
+      const sel = document.getElementById('categoryFilter');
+      const cats = [...new Set(products.map(p => p.category))].sort();
+      cats.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c; opt.textContent = capitalize(c);
+        sel.appendChild(opt);
+      });
+    }
+
+    function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+    /* ══════════════════════════════════════
+       RENDER PRODUCTS
+    ══════════════════════════════════════ */
+    function renderProducts(list) {
+      const grid = document.getElementById('productGrid');
+      document.getElementById('countNum').textContent = list.length;
+      grid.innerHTML = '';
+
+      if (!list.length) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div class="emoji">🔍</div>
+            <h3>No products found</h3>
+            <p>Try a different search term or category.</p>
+          </div>`;
+        return;
+      }
+
+      list.forEach((p, i) => {
+        const inWish = wishlist.has(p.id);
+        const priceHTML = p.originalPrice
+          ? `${p.price}<small>${p.originalPrice}</small>`
+          : p.price;
+
+        const imgHTML = p.image
+          ? `<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             <div class="img-fallback" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:4rem;background:var(--blush);">${p.emoji}</div>`
+          : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--blush);">${p.emoji}</div>`;
+
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.style.animationDelay = `${i * 0.06}s`;
+        card.innerHTML = `
+          <div class="card-img-wrap">
+            ${imgHTML}
+            <div class="card-badge">${p.category}</div>
+            <button class="card-wish ${inWish ? 'active' : ''}" onclick="toggleWish(${p.id},this)" title="Wishlist">
+              <i class="${inWish ? 'fas' : 'far'} fa-heart"></i>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-category">${p.category}</div>
+            <div class="card-name">${p.name}</div>
+            <div class="card-price">${priceHTML}</div>
+          </div>
+          <div class="card-footer">
+            <a href="${p.whatsapp}" target="_blank" class="btn-whatsapp" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+            </a>
+          </div>`;
+        grid.appendChild(card);
+      });
+    }
+
+    /* ══════════════════════════════════════
+       FILTER LOGIC
+    ══════════════════════════════════════ */
+    function getFiltered() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const cat = document.getElementById('categoryFilter').value;
+      return products.filter(p => {
+        const matchCat = cat === 'all' || p.category === cat;
+        const matchQ = !q || p.name.toLowerCase().includes(q);
+        return matchCat && matchQ;
+      });
+    }
+
+    function applyFilters() { renderProducts(getFiltered()); }
+
+    document.getElementById('searchInput').addEventListener('input', applyFilters);
+    document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+
+    /* ══════════════════════════════════════
+       WISHLIST TOGGLE
+    ══════════════════════════════════════ */
+    function toggleWish(id, btn) {
+      if (wishlist.has(id)) {
+        wishlist.delete(id);
+        btn.classList.remove('active');
+        btn.querySelector('i').className = 'far fa-heart';
+        showToast('Removed from wishlist');
+      } else {
+        wishlist.add(id);
+        btn.classList.add('active');
+        btn.querySelector('i').className = 'fas fa-heart';
+        showToast('Added to wishlist ♥');
+      }
+    }
+
+    /* ══════════════════════════════════════
+       TOAST
+    ══════════════════════════════════════ */
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    /* ══════════════════════════════════════
+       SMOOTH SCROLL FOR HERO CTA
+    ══════════════════════════════════════ */
+    document.querySelector('.hero-cta').addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector('#products').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    /* ══════════════════════════════════════
+       BOOTSTRAP
+    ══════════════════════════════════════ */
+    buildCategoryFilter();
+    renderProducts(products);
+  </script>
+</body>
+
+</html>
